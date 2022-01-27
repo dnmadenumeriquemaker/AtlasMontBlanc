@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="preload" style="position:absolute"></div>
+	<div id="other_overlay"></div>
+	<div id="transition_overlay"></div>
+	
+	<div id="WORLD_TRAVELERS">
+		<div id="INTERACT_ICON"></div>
+		<div id="player_test" height="150px" width="235px"></div>
+		<div id="DIALOGBOX_DYNAMIC"></div>
+	</div>
+	<!-- 
+
+		FIRST WORLD	
+
+	-->
+	<div id="world_01" class="world">
+		<div id="world01_parralax" class="parralax"></div>
+		<!-- npcs and decoration -->
+		<div id="KEY_DROITE" class="npc" style="left:167px ; bottom:240px; width:150px; height:150px;"></div>
+		<div id="KEY_HAUT" class="npc" style="left:1790px ; bottom:200px; width:150px; height:150px;"></div>
+		
+		<div id="NPC_01" class="npc" style="left:1827px ; bottom:100px; width:235px"></div>
+		<div id="NPC_02" class="npc" style="left:3643px ; bottom:100px; width:235px"></div>
+		<div id="NPC_03" class="npc" style="left:6729px ; bottom:100px; width:235px"></div>
+		<div id="NPC_04" class="npc" style="left:8970px ; bottom:100px; width:235px"></div>
+		
+		<div id="NPC_MESANGE" class="npc" style="left:10800px ; bottom:-30px; width:600px ; height:600px; z-index:2;"></div>
+		
+		<div id="NPC_05" class="npc" style="left:13200px; bottom:100px; width:235px"></div>
+		
+		<div id="NPC_FLIES" class="npc" style="left:17231px; bottom:100px; width:250px ; height:160px"></div>
+		
+		<div id="WORLD1_FLECHE" class="npc" style="left:18351px ; bottom:300px; width:200px; height:200px; visibility: hidden;"></div>
+		<!-- base elements -->
+		<div id="world_01_init" class="world_init_container">
+			
+		</div>
+		
+		<div id="world_01_overlay"></div>
+	</div>
+
+	<!-- 
+
+		SECOND WORLD	
+
+	-->
+	<div id="world_02" class="world" style="visibility: hidden">
+		<div id="world02_parralax" class="parralax"></div>
+		<!-- npcs and decoration -->
+		
+		<div id="NPC_06" class="npc" style="left:3840px ; bottom:130px; width:235px"></div>
+		<div id="NPC_07" class="npc" style="left:8270px ; bottom:100px; width:235px"></div>
+		<div id="NPC_08" class="npc" style="left:10990px ; bottom:130px; width:235px"></div>
+		<div id="NPC_09" class="npc" style="left:14220px ; bottom:120px; width:235px"></div>
+		
+		<div id="NPC_SOUCHE" class="npc" style="left:13730px ; bottom:-60px; width:561px; height:458px; z-index:1; visibility: hidden;"></div>
+		
+		<div id="NPC_10" class="npc" style="left:17220px ; bottom:120px; width:235px"></div>
+		
+		<!-- base elements -->
+		<div id="world_02_init" class="world_init_container"></div>
+		
+		<div id="world_02_overlay"></div>
+	</div>
+
+	<!-- 
+
+		THIRD WORLD	
+
+	-->
+	<div id="world_03" class="world" style="visibility: hidden">
+		<div id="world03_parralax" class="parralax"></div>		
+		<!-- npcs and decoration -->
+		<div id="NPC_11" class="npc" style="left:2400px ; bottom:130px; width:235px"></div>
+		<div id="NPC_12" class="npc" style="left:5860px ; bottom:130px; width:235px"></div>
+		<div id="NPC_13" class="npc" style="left:7640px ; bottom:130px; width:235px"></div>
+		
+		<div id="NPC_DEADFROG" class="npc" style="left:12950px ; bottom:160px; width:235px; height:88px;"></div>
+		<div id="NPC_TETARDS" class="npc" style="left: 10920px; bottom: 90px; width:235px"></div>
+		
+		<div id="NPC_MESANGEMORTE" class="npc" style="left: 8930px;bottom: 70px;width: 470px;height: 259px;"></div>
+		
+		<div id="NPC_14" class="npc" style="left:15245px ; bottom:130px; width:235px"></div>
+		<!-- base elements -->
+		<div id="world_03_init" class="world_init_container"></div>
+				
+		<div id="world_03_overlay"></div>
+	</div>
+	
+	<!-- OTHER STATIC ELEMENTS -->
+	
+	<div id="DIALOGBOX_STATIC"></div>
+	
+	<div id="CHOICEBOX" style="visibility: hidden">
+		<div id="CHOICEBOX_TEXT"></div>
+		<div class="CHOICEBOX_BTN">
+			<div id="CHOICEBOX_CHOICE1"></div>
+			<div class="uiarrow" style="background-image:url('imgs/ui/keys/gauche2.png'); left:10%;"></div>
+		</div>
+		<div class="CHOICEBOX_BTN">
+			<div id="CHOICEBOX_CHOICE2"></div>
+			<div class="uiarrow" style="background-image:url('imgs/ui/keys/droite2.png'); right:10%;"></div>
+		</div>
+	</div>
+	
+	<div id="OBJECTIFBOX" class="objbox_hide">
+		<div id="OBJECTIFTEXT">Réveille toi jeune grenouille...</div>
+		<div id="OBJECTIF1" class="objectif objectif_state0" style="background-image:url(imgs/ui/objectifs/0.png)"></div>
+		<div id="OBJECTIF2" class="objectif objectif_state0" style="background-image:url(imgs/ui/objectifs/1.png)"></div>
+		<div id="OBJECTIF3" class="objectif objectif_state0" style="background-image:url(imgs/ui/objectifs/2.png)"></div>
+		<div id="ObjectifNotif">Objectif réussi : <span id="objNotifSpan"></span></div>
+	</div>
+	
+	<!--All other scripts, keep it below everything-->
+	<script src="scripts/preload.js"></script>
+	<script src="scripts/math.js"></script>
+	<script src="scripts/sprites.js"></script>
+	<script src="scripts/dialogues.js"></script>
+	<script src="scripts/choix.js"></script>
+	<script src="scripts/objectifs.js"></script>
+	<script src="scripts/restrict_playermovements.js"></script>
+	<script src="scripts/base.js"></script>
+	<script src="config.js"></script>
+</body>
+</html>

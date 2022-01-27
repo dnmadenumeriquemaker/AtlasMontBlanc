@@ -1,0 +1,391 @@
+html, body {
+	margin:0px;
+	overflow:hidden;
+	background-color:black;
+	font-family: 'MainText';
+	font-size:22px;
+}
+
+.world {
+	position:absolute;
+	height:1080px;
+	width:19947px;
+	left:0px;
+	background-position:bottom left;
+	bottom:0px;
+}
+
+.parralax {
+	position:absolute;
+	height:1080px;
+	width:5000px;
+	z-index:-1;
+	bottom:0px
+}
+
+/* WORLD NUMBER 1 */
+#world_01 {
+	background-image:/*url("imgs/plan.png"),*/url("imgs/world/01/arriere.png");
+}
+
+#world_01_overlay {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-image:url("imgs/world/01/devant.png");
+	background-position:bottom left;
+}
+
+#world01_parralax {
+	background-image:url("imgs/world/01/parralax.png");
+}
+
+/* WORLD NUMBER 2 */
+#world_02 {
+	background-image:/*url("imgs/world/02/plan.png"),*/url("imgs/world/02/derriere.png");
+}
+
+#world_02_overlay {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-image:url("imgs/world/02/devant.png");
+	background-position:bottom left;
+}
+
+#world02_parralax {
+	background-image:url("imgs/world/02/parralax.png");
+}
+
+/* WORLD NUMBER 3 */
+#world_03 {
+	background-image:url("imgs/world/03/derriere.png");
+}
+
+#world_03_overlay {
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-image:url("imgs/world/03/devant.png");
+	background-position:bottom left;
+}
+
+#world03_parralax {
+	background-image:url("imgs/world/03/parralax.png");
+}
+
+
+/* OTHERS */
+.world_init_container {
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+
+#player_test {
+	height:150px;
+	width:235px;
+	background-size: 100% 100%;
+	position:absolute;
+}
+
+.npc {
+	position:absolute;
+	background-size:100% 100%;
+	height:150px;
+	width:235px;
+}
+
+/*==============================================
+FONT ELEMENTS
+==============================================*/
+
+@font-face {
+	font-family:"MainText";
+	src:url("fonts/main.ttf");
+}
+
+@font-face {
+	font-family:"Niwida";
+	src:url("fonts/niwida.ttf");
+}
+
+/*==============================================
+ELEMENT INTERACTION
+==============================================*/
+
+@keyframes ANIM_INTERACTICON {
+	from {transform: translate(-50%,0%)rotate(-25deg);}
+	50% {transform:translate(-50%,0%) rotate(25deg);}
+	to {transform:translate(-50%,0%) rotate(-25deg);}
+}
+
+#INTERACT_ICON {
+	z-index:1;
+	position:absolute;
+	transform:translateX(-10%) !important;
+	width:100px;
+	height:100px;
+	background-size:100% 100%;
+	/*	
+	animation-name: ANIM_INTERACTICON;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	transition: height 1s;
+	*/
+}
+
+.ICON_FORCEHIDE {
+	visibility: hidden !important;
+	/*height:50px !important;*/
+}
+
+/*==============================================
+DIALOG BOX AND CHOICES BOX RELATED 
+==============================================*/
+
+#DIALOGBOX_DYNAMIC {
+	z-index:3;
+	position:absolute;
+	visibility: hidden;
+	background-color:white;
+	max-width: 350px;
+	overflow:hidden;
+	padding:15px;
+	/*border-radius:10px;*/
+	border: double black 1em;
+	
+	/* Border image*/
+	border-image-source: url("imgs/ui/box_borde.svg");
+	border-image-slice: 9;
+	border-image-width: auto;
+	border-image-outset: 3px;
+
+}
+
+#DIALOGBOX_STATIC {
+	z-index:1;
+	visibility: hidden;
+	background-color:white;
+	max-width: 500px;
+	/*height: 200px;*/
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	
+	/* additional styles */
+	padding:40px;
+	border-radius:20px;
+	
+	/* Border image*/
+	border-image-source: url("imgs/ui/box_borde.svg");
+	border-image-slice: 9;
+	border-image-width: auto;
+	border-image-outset: 3px;
+}
+
+.niwida {
+	font-family: "Niwida";
+}
+
+/*==============================================
+BOITE DE CHOIX
+==============================================*/
+
+#CHOICEBOX {
+	z-index:2;
+	position:absolute;
+	width:40%;
+	height:40%;
+	left:30%;
+	top:30%;
+	
+	/* additional styles */
+	background-color:white;
+	color:black;
+	/*border-radius:15px;*/
+		
+	/* Border image*/
+	border-image-source: url("imgs/ui/box_borde.svg");
+	border-image-slice: 9;
+	border-image-width: auto;
+	border-image-outset: 9px;
+}
+
+#CHOICEBOX_TEXT {
+	position:absolute;
+	font-size:25px;
+	width:90%;
+	top:20%;	
+	left:50%;
+	transform:translateX(-50%);
+	
+	/* additional styles */
+	text-align:center;
+}
+
+#CHOICEBOX_CHOICE1 {
+	position:absolute;
+	height:10%;
+	width:20%;
+	max-width:20%;
+	left:20%;
+	bottom:10%;
+	
+	/* additional styles */
+	text-align:left;
+	/*
+	border:solid black 3px;
+	border-radius:5px;
+	padding:10px;*/
+	line-height:20px;
+}
+
+#CHOICEBOX_CHOICE2 {
+	position:absolute;
+	height:10%;
+	width:20%;
+	max-width:20%;
+	right:20%;
+	bottom:10%;
+	
+	/* additional styles */
+	/*border-radius:5px;
+	border:solid black 3px;
+	padding:10px;*/
+	text-align: right;
+	line-height:20px;
+}
+
+.uiarrow {
+	aspect-ratio: 1 / 1;
+	height:20%;
+	position:absolute;
+	background-size:100% 100%;
+	bottom:10%;
+}
+
+.CHOICEBOX_BTN {
+	cursor:pointer;
+}
+
+/*==============================================
+OBJECTIFS
+==============================================*/
+
+#OBJECTIFBOX {
+	z-index:11;
+	font-size:20px;
+	position:absolute;
+	display:grid;
+	grid-template-columns: auto auto auto;
+	grid-column-gap: 40px;
+	width:360px;
+	height:150px;
+	left:50%;
+	padding-top:20px;
+	justify-content: center;
+	transform: translateX(-50%);
+	transition: top 1s;
+	/* Border image*/
+	background-color:white;
+	border-image-source: url("imgs/ui/box_borde.svg");
+	border-image-slice: 9;
+	border-image-width: auto;
+	border-image-outset: 9px;
+}
+
+#OBJECTIFBOX:hover, .objbox_show {
+	top:-5px;
+}
+
+.objbox_hide {
+	top:-150px;
+}
+
+.objectif {
+	width:80px;
+	height:80px;
+	border-radius:40px;
+	background-color:#424242;
+	transition: background-color 0.5s;
+	transition-timing-function: ease-in-out;
+	/*outline-style: solid;*/
+	/*outline-color:#00FF00;*/
+	border:solid 1px black;
+	background-size:contain;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+.objectif_active {
+	background-color:white !important;
+}
+
+.objectif_state0 {
+	/*outline-width: 0px;*/
+}
+
+.objectif_state1 {
+	/*outline-width: 5px;*/
+	background-color:#5DE77A;
+}
+
+#OBJECTIFTEXT {
+	position:absolute;
+	top:110px;
+	width:100%;
+	text-align:center;
+	pointer-events:none;
+}
+
+#ObjectifNotif {
+	text-shadow: 0 0 10px #000000;
+	color:white;
+	position:absolute;
+	left:50%;
+	max-width:100vw;
+	bottom:-50px;
+	font-size:60px;
+	white-space: nowrap;
+	transform:translateX(-50%);
+	opacity:0;
+	transition: opacity 1s, bottom 1s;
+	transition-timing-function: ease-in;
+}
+
+.enableNotif {
+	bottom:-100px !important;
+	opacity:1 !important;
+}
+
+/*==============================================
+TRANSITIONS
+==============================================*/
+#transition_overlay {
+	pointer-events: none;
+	z-index:15;
+	margin:0px;
+	width:100%;
+	height:100%;
+	position:absolute;
+	transition:background-color 2s;
+	transition-timing-function: ease-in;
+}
+
+#other_overlay {
+	z-index: 20;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background-size:contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: opacity 1s;
+}
+
+.overlayHide {
+	opacity:0;
+}
